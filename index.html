@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lyrics Tracker</title>
+   <link rel="stylesheet" href="lyrics.css">
+</head>
+<body>
+    <main>
+        <section id = "text-section">
+            <p id ="prev-lyrics"></p>
+            <p id="lyrics-container"></p>
+            <p id= "nxt-lyrics"></p>
+        </section>
+        <br>
+        <button id="ply">play</button>
+        <button id="pse">pause</button>
+        <br>
+        <br>
+        <audio id="track" controls={true} src="/lyrics/patti labelle - here & now.mp3" type="mp3"></audio>
+    </main>
+    <script src="/lyrics/lyrics_tracker.js"></script>
+</body>
+</html>

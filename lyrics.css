@@ -1,0 +1,23 @@
+p{
+    color: wheat;
+}
+#lyrics-container{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+main{
+    margin-left: 35%;
+}
+
+#text-section{
+    border-radius: 3%;
+    height: 200px;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 10px 7%;
+    background-image: url("index.jpg");
+    background-size: cover;
+    background-color: grey;
+    background-blend-mode: multiply;
+}
