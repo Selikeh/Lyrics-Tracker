@@ -56,6 +56,7 @@ function init(){
                 if(trackTime >= parseFloat(el.timeIn) && trackTime <= parseFloat(el.timeOut)){
                     if(lyricsText.indexOf(el) === 0){
                         lyrics.innerText = el.text
+                        nxtLyrics.innerText = lyricsText[lyricsText.indexOf(el)+1].text
                     }else if(lyricsText.indexOf(el) > 0 && lyricsText.indexOf(el) < (lyricsText.length - 1)){
                     prevLyrics.innerText = lyricsText[lyricsText.indexOf(el)-1].text
                     lyrics.innerText = el.text
