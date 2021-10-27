@@ -18,11 +18,19 @@
         <section id="buttons-section">
             <button id="ply">play</button>
             <button id="pse">pause</button>
+            <button id="stp">stop</button>
             <br>
             <br>
-            <audio id="track" src="/lyrics/patti labelle - here & now.mp3" type="mp3"></audio>
+            <audio id="track" src="patti labelle - here & now.mp3" type="mp3"></audio>
+            <br>
+            <span id="current-display">&#8722 &#58 &#8722&#8722</span>
+            <span>&#47</span>
+            <span id="duration-display"></span>
         </section>
+        <form action="">
+            <input type="range" name="playback-time" id="seek" min="0" max="">
+        </form>
     </main>
-    <script src="/lyrics/lyrics_tracker.js"></script>
+    <script src="lyrics_tracker.js"></script>
 </body>
 </html>
