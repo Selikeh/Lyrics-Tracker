@@ -1,8 +1,8 @@
 // get various buttons, paragraphs, and audio track
+const track = document.getElementById('track')
 const ply = document.getElementById('ply')
 const pse = document.getElementById('pse')
 const stp = document.getElementById('stp')
-const track = document.getElementById('track')
 const prevLyrics = document.getElementById('prev-lyrics')
 const lyrics = document.getElementById('lyrics-container')
 const nxtLyrics = document.getElementById('nxt-lyrics')
@@ -26,15 +26,28 @@ console.log(track)
 // time update event
 
 // ******************************************************************
+let playStatus = false
+ply.addEventListener('click', ()=>{ 
+    
+    if(playStatus == false){
+        track.play()
+        ply.innerHTML ="<b>II</b>"
+        playStatus = true
+    } else if (playStatus == true){
+        track.pause()
+        ply.innerHTML ="&#9658"
+        playStatus = false
+    }
+})
 
-ply.addEventListener('click', ()=>track.play())
-pse.addEventListener('click', ()=>track.pause())
 stp.addEventListener('click', ()=>{
     track.currentTime=0
     track.pause()
     prevLyrics.innerText = ""
     lyrics.innerText = ""
     nxtLyrics.innerText = ""
+    ply.innerHTML ="&#9658"
+    playStatus = false
 })
 
 seek.max = track.duration
@@ -42,22 +55,18 @@ console.log(track.duration)
 seek.value = 0
 
 let trackTime // to be updated later in event listener for the time update event of track
-let durationSeconds = parseInt(track.duration)%60
+let durationSeconds = parseInt(track.duration)%60 
 let durationMinutes = parseInt(parseInt(track.duration)/60)
- 
-// let currentMinutes = parseInt(track.currentTime)%60
-// let currentSeconds = parseInt(parseInt(track.currentTime)/60)
 
-
-// currentDisplay.innerText = currentMinutes + ":" + currentSeconds
 durationDisplay.innerText = durationMinutes + ":" + durationSeconds
- 
+// to display the length/duration of the audio file 
 
 
-
+//*****************NOTE*********** */
+// Leaving the following code commented out becasue it can be used later when loading lyrics from a JSON file
 // function loadJSON(callback){
 //     var xobj = new XMLHttpRequest();
-//     xobj.overrideMimeType("application/json");
+//     xobj.overrideMimeType("/*path/url to JSON file.json*/");
 //     xobj.open('GET', 'lyrics-file.json', true)
 //     xobj.onreadystatechange = function(){
 //         if (xobj.readyState == 4 && xobj.status == "200"){
@@ -126,7 +135,6 @@ track.addEventListener('timeupdate', (e)=>{
     seek.value = trackTime
 
     let currentSeconds = parseInt(trackTime)%60
-    
     let currentMinutes = parseInt(parseInt(trackTime)/60)
 
     if(currentSeconds<10){
@@ -134,10 +142,8 @@ track.addEventListener('timeupdate', (e)=>{
     } else{
         currentDisplay.innerText = currentMinutes + ":" + currentSeconds
     }
-    
+    //Displays the current time of the audio file
 })
-
-
 
 
 

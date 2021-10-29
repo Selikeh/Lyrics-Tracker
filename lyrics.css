@@ -25,7 +25,7 @@ p{
 
 #buttons-section{
     position: relative;
-    left: 40%;
+    left: 45%;
 }
 
 button{
@@ -34,6 +34,7 @@ button{
     color: white;
     text-decoration: none;
     font-size: 16px;
+    border-radius: 5px;
 }
 
 button:hover{
@@ -49,6 +50,7 @@ button:hover{
 }
 #stp{
     background-color: red;
+    font-size: 16px;
 }
 
 form{
